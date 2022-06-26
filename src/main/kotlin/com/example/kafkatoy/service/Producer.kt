@@ -30,7 +30,7 @@ class Producer(private val kafkaProducerTemplate: KafkaTemplate<String, KafkaMes
         val randomString = RandomStringUtils.randomAlphanumeric(2940);
         val randomStringLength = randomString.length + 60
 
-        for (i in 1..10) {
+        for (i in 1..100) {
             val producerRecord : ProducerRecord<String, String> = ProducerRecord("throughput-test1", "key", "Consume data from kafka : Order = $i, Size = $randomStringLength, Message = $randomString")
             val future: Future<RecordMetadata> = producer.send(producerRecord)!!
             val result = future.get()
