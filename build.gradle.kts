@@ -29,6 +29,8 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.springframework.kafka:spring-kafka-test")
     testImplementation("org.testcontainers:kafka:1.15.3")
+
+    implementation("org.apache.commons:commons-lang3:3.12.0")
 }
 
 tasks.withType<KotlinCompile> {
