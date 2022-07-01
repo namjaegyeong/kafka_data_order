@@ -11,6 +11,6 @@ class ProducerController(private val producer: Producer, private val consumer: C
     @GetMapping("/")
     fun dataOrderGuarantee() {
         producer.dataOrderGuaranteeProduce()
-        consumer.dataOrderGuaranteeConsumer()
+        consumer.dataOrderGuaranteeConsume()
     }
 }

@@ -13,7 +13,7 @@ import java.util.*
 class Consumer {
     private var messageList = listOf<KafkaMessage>()
 
-    fun dataOrderGuaranteeConsumer(){
+    fun dataOrderGuaranteeConsume(){
         val properties = Properties()
         properties[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = "172.17.2.13:9092,172.17.2.12:9092,172.17.2.14:9092"
         properties[ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG] = ErrorHandlingDeserializer::class.java
