@@ -34,7 +34,7 @@ class Producer(private val kafkaProducerTemplate: KafkaTemplate<String, KafkaMes
             val producerRecord : ProducerRecord<String, String> = ProducerRecord("throughput-test1", "key", "Consume data from kafka : Order = $i, Size = $randomStringLength, Message = $randomString")
             val future: Future<RecordMetadata> = producer.send(producerRecord)!!
             val result = future.get()
-            println("Produce data from kafka : Offset =" + result.offset() + ", Size =" + result.serializedValueSize())
+            println("Produce data from kafka : Offset =" + result.offset() + ", Size =" + result.serializedValueSize() + " bytes")
         }
         producer.flush()
         producer.close()
