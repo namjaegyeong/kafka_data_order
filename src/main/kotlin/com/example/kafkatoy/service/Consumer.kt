@@ -29,8 +29,7 @@ class Consumer {
         try {
             val records = consumer.poll(Duration.ofMillis(100000))
             for (record in records) {
-                message = record.value()
-                println(message)
+                println("Consume data from kafka : Offset = " + record.offset() + ", Size = " + record.serializedValueSize() + " bytes")
             }
         } catch (e: Exception) {
             println(e)
